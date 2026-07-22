@@ -1,7 +1,8 @@
 const express = require("express")
 const { routes } = require("./src/routes")
 const app = express()
-
+const path = require("node:path")
+app.use(express.static(path.join(__dirname, "public")))
 const PORT = process.env.PORT || 3000
 
 app.use(express.json()) // habilita res.body cuando se manda un req con application/json
